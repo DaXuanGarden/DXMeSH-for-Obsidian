@@ -1,7 +1,7 @@
 {
-	"name": "DXMeSH for Obsidian",
-	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"name": "DXMeSH",
+	"version": "0.0.1",
+	"description": "Transform your scientific writing process with DXMeSH for Obsidian. Designed as a reliable assistant for constructing your research material library, it makes compiling, organizing, and accessing your research data more efficient than ever. Elevate your writing and research productivity to new heights! (https://github.com/DaXuanGarden/DXMeSH-for-Obsidian)",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",

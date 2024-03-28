@@ -1,11 +1,11 @@
 {
-	"id": "DXMeSH for Obsidian",
-	"name": "DXMeSH for Obsidian",
-	"version": "1.0.0",
+	"id": "DXMeSH",
+	"name": "DXMeSH",
+	"version": "0.0.1",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
+	"description": "Transform your scientific writing process with DXMeSH for Obsidian. Designed as a reliable assistant for constructing your research material library, it makes compiling, organizing, and accessing your research data more efficient than ever. Elevate your writing and research productivity to new heights!",
 	"author": "Daxuan",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"authorUrl": "https://flowus.cn/daxuan/share/f55914d6-28a2-480a-91ef-277c3c9c0945?code=JG02WW",
+	"fundingUrl": "https://github.com/DaXuanGarden/DXMeSH-for-Obsidian",
 	"isDesktopOnly": false
 }
