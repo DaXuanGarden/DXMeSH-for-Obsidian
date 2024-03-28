@@ -15,7 +15,7 @@ export default class MyPlugin extends Plugin {
 
 	async onload() {
 		// Add a ribbon icon, and upon clicking, process the current Markdown file
-this.addRibbonIcon('rocket', '✍🏻Get writing materials', async (evt: MouseEvent) => {
+this.addRibbonIcon('pen-tool', '✒️Get writing materials', async (evt: MouseEvent) => {
     new Notice('🤩Start sorting out your writing materials!');
 
     const activeView = this.app.workspace.getActiveViewOfType(MarkdownView);
