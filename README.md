@@ -27,7 +27,7 @@ The development of the `DXMeSH` project relies on your participation and support
 # 🌱 Future Outlook
 
 Guided by "The Science of Scientific Writing," `DXMeSH` always focuses on the end goal, simplifying scientific workflows, and improving research efficiency.
->`DXMeSH` will continue to strive under the guidance of `Professor Zhong's "The Science of Scientific Writing,"` aiming to create a one-stop tool for medical paper retrieval, material repository construction, and term visualization.![alt text](test/微信图片_20240329112328.jpg)
+>`DXMeSH` will continue to strive under the guidance of `Professor Zhong's "The Science of Scientific Writing,"` aiming to create a one-stop tool for medical paper retrieval, material repository construction, and term visualization.![alt text](test/Knowledge%20Planet%20-%20Scientific%20Research.jpg)
 
 🚀 Join us to explore more possibilities in scientific writing, and let your research show its true depth and breadth. Start building your material repository and begin a new journey of efficient scientific writing today!
 
@@ -41,4 +41,4 @@ Together, let's research smarter and innovate more efficiently! 🌟
 2. https://docs.obsidian.md/Home
 3. Professor Zhong Cheng’s National Outstanding Young Scholars Award "The Science of Scientific Writing"
 
-> Hello, welcome to Daxuan's Growth Garden, where you'll find records and reviews of Daxuan's learning and research journey. As a student majoring in Traditional Chinese Medicine, I am fully aware that there is much to improve and enhance in my academic and research explorations. Therefore, I am particularly keen on exchanging ideas and learning from teachers and classmates to achieve greater progress. Daxuan sincerely invites you to join in the effort, to move forward together, and to witness each other's growth. Feel free to email Daxuan at `daxuan111000@163.com` to share knowledge, exchange insights, and grow together. ![alt text](test/副本微信二维码压缩版.png)
+> Hello, welcome to Daxuan's Growth Garden, where you'll find records and reviews of Daxuan's learning and research journey. As a student majoring in Traditional Chinese Medicine, I am fully aware that there is much to improve and enhance in my academic and research explorations. Therefore, I am particularly keen on exchanging ideas and learning from teachers and classmates to achieve greater progress. Daxuan sincerely invites you to join in the effort, to move forward together, and to witness each other's growth. Feel free to email Daxuan at `daxuan111000@163.com` to share knowledge, exchange insights, and grow together. ![alt text](test/WeChat%20QR%20code.png)
