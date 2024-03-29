@@ -14,82 +14,87 @@ export default class MyPlugin extends Plugin {
 	settings: MyPluginSettings;
 
 	async onload() {
-		// Add a ribbon icon, and upon clicking, process the current Markdown file
-this.addRibbonIcon('pen-tool', '✒️Get writing materials', async (evt: MouseEvent) => {
-    new Notice('🤩Start sorting out your writing materials!');
-
-    const activeView = this.app.workspace.getActiveViewOfType(MarkdownView);
-    if (!activeView || !activeView.file) {
-        new Notice('No active markdown view to operate on.😭');
-        return;
-    }
-
-    const editor = activeView.editor;
-    const docText = editor.getValue();
-
-    const headingRegex = /^##\s+(.+)$/gm; // Matches level-2 headings
-    const bracketContentRegex = /(\【.*?\】)/g; // Modified to match content within 【】, allowing for no text content
-    let modifiedText = '';
-    let lastIndex = 0;
-
-    // Process the text, find and handle all level-2 headings and content within 【】
-    docText.replace(headingRegex, (match, titleContent, offset) => {
-        modifiedText += docText.slice(lastIndex, offset);
-        lastIndex = offset + match.length;
-
-        const endOfSectionIndex = docText.indexOf('\n## ', lastIndex);
-        const sectionContent = endOfSectionIndex !== -1 ? docText.slice(lastIndex, endOfSectionIndex) : docText.slice(lastIndex);
-
-        let modifiedSectionContent = sectionContent.replace(bracketContentRegex, (bracketMatch) => {
-            // Process even if there's no text within the brackets 【】
-            return `\n### ${bracketMatch}\n${titleContent}\n`;
-        });
-
-        modifiedText += match + modifiedSectionContent;
-        lastIndex = endOfSectionIndex !== -1 ? endOfSectionIndex : docText.length;
-
-        return match;
-    });
-    // The modifiedText now contains the processed text content
-    modifiedText += docText.slice(lastIndex);
-
-    // Parse the original file path to get the base name and version information
-    const originalFilePath = activeView.file.path;
-    const fileNameMatch = originalFilePath.match(/^(.*\/)?([^\/]+?)(?:-(\d+)(?:\.(\d+))?)?(\.md)$/);
-
-    if (fileNameMatch) {
-        let baseName = fileNameMatch[2];
-        let versionNumber = 2; // Set to 2 because we are creating 2.x versions
-        let subVersionNumber = 1; // Starting from 2.1
-
-        // Add current date to the file name
-        const currentDate = new Date().toISOString().slice(0, 10); // Format: YYYY-MM-DD
-
-        let newFileName = `${fileNameMatch[1] || ''}${baseName}-${versionNumber}.${subVersionNumber}_${currentDate}.md`;
-
-        // Create version 2.1 of the file and write the processed text to it, including the current date
-        await this.app.vault.create(newFileName, modifiedText); // Use modifiedText instead of docText
-        new Notice(`🌱File saved as ${newFileName}`);
-
-        // Increment version for subsequent files
-        subVersionNumber += 1;
-        newFileName = `${fileNameMatch[1] || ''}${baseName}-${versionNumber}.${subVersionNumber}_${currentDate}.md`;
-        await this.app.vault.create(newFileName, modifiedText); // Using modifiedText again
-        new Notice(`🌱File saved as ${newFileName}`);
-
-        // For creating an empty file with the next version number and current date
-        subVersionNumber += 1;
-        newFileName = `${fileNameMatch[1] || ''}${baseName}-${versionNumber}.${subVersionNumber}_${currentDate}.md`;
-        await this.app.vault.create(newFileName, ''); // Creating an empty file
-        new Notice(`🌱Empty file created as ${newFileName}`);
-    } else {
-        new Notice('Error: Original file path does not match expected format.😭');
-    }
-
-});
-
-
+		//✒️Get writing materials
+		this.addRibbonIcon('pen-tool', '✒️Get writing materials', async (evt: MouseEvent) => {
+			new Notice('🤩Start sorting out your writing materials!');
 		
+			const activeView = this.app.workspace.getActiveViewOfType(MarkdownView);
+			if (!activeView || !activeView.file) {
+				new Notice('No active markdown view to operate on.😭');
+				return;
+			}
+		
+			const editor = activeView.editor;
+			let docText = editor.getValue();
+		
+			// Fixed extra line breaks between【】.
+			const fixNewlinesBeforeBracketsRegex = /(\n+)(\【.*?\】)/g;
+			docText = docText.replace(fixNewlinesBeforeBracketsRegex, '\n$2');
+		
+			const headingRegex = /^##\s+(.+)$/gm; // Matches level-2 headings
+			const bracketContentRegex = /(\【.*?\】)/g; // Match content within 【】, allowing for no text content
+			let modifiedText = '';
+			let lastIndex = 0;
+		
+			// Process the text, find and handle all level-2 headings and content within 【】
+			docText.replace(headingRegex, (match, titleContent, offset) => {
+				modifiedText += docText.slice(lastIndex, offset);
+				lastIndex = offset + match.length;
+		
+				const endOfSectionIndex = docText.indexOf('\n## ', lastIndex);
+				const sectionContent = endOfSectionIndex !== -1 ? docText.slice(lastIndex, endOfSectionIndex) : docText.slice(lastIndex);
+		
+				let modifiedSectionContent = sectionContent.replace(bracketContentRegex, (bracketMatch) => {
+					// Process even if there's no text within the brackets 【】
+					return `\n${bracketMatch}\n### ${bracketMatch}\n${titleContent}\n`;
+				});
+		
+				modifiedText += match + modifiedSectionContent;
+				lastIndex = endOfSectionIndex !== -1 ? endOfSectionIndex : docText.length;
+		
+				return match;
+			});
+			// The modifiedText now contains the processed text content
+			modifiedText += docText.slice(lastIndex);
+		
+			// Parse the original file path to get the base name and version information
+			const originalFilePath = activeView.file.path;
+			const fileNameMatch = originalFilePath.match(/^(.*\/)?([^\/]+?)(?:-(\d+)(?:\.(\d+))?)?(\.md)$/);
+		
+			if (fileNameMatch) {
+				let baseName = fileNameMatch[2];
+				let versionNumber = 2; // Set to 2 because we are creating 2.x versions
+				let subVersionNumber = 1; // Starting from 2.1
+		
+				// Add current date to the file name
+				const currentDate = new Date().toISOString().slice(0, 10); // Format: YYYY-MM-DD
+		
+				let newFileName = `${fileNameMatch[1] || ''}${baseName}-${versionNumber}.${subVersionNumber}_${currentDate}.md`;
+		
+				// Create version 2.1 of the file and write the processed text to it, including the current date
+				await this.app.vault.create(newFileName, modifiedText); // Use modifiedText instead of docText
+				new Notice(`🌱File saved as ${newFileName}`);
+		
+				// Increment version for subsequent files
+				subVersionNumber += 1;
+				newFileName = `${fileNameMatch[1] || ''}${baseName}-${versionNumber}.${subVersionNumber}_${currentDate}.md`;
+				await this.app.vault.create(newFileName, modifiedText); // Using modifiedText again
+				new Notice(`🌱File saved as ${newFileName}`);
+		
+				// For creating an empty file with the next version number and current date
+				subVersionNumber += 1;
+				newFileName = `${fileNameMatch[1] || ''}${baseName}-${versionNumber}.${subVersionNumber}_${currentDate}.md`;
+				await this.app.vault.create(newFileName, ''); // Creating an empty file
+				new Notice(`🌱Empty file created as ${newFileName}`);
+			} else {
+				new Notice('Error: Original file path does not match expected format.😭');
+			}
+		
+		});
+		
+		
+		
+
 		
  // 
 		//await this.loadSettings();
