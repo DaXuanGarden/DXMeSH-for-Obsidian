@@ -1,4 +1,4 @@
-# DXMeSH for Obsidian | The Key to an Efficient Scientific Research Material Repository
+# DXMeSH for Obsidian | Create an efficient scientific research material library with one click
 
 **💭 Fellow researchers, are you tired of writing papers and organizing materials? Worry no more! DXMeSH for Obsidian is here to help you effortlessly create an efficient scientific research material repository!**
 
