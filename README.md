@@ -7,12 +7,15 @@
 - 🎯 No need for programming foundations such as R language; create an efficient research material repository with just one click;
 - 📚 Based on the scientific methodology from "The Science of Scientific Writing," enabling efficient scientific writing.
 # 📍 Getting Started
-
-
-
-## 🛠 Installation Guide
-
+## 🛠 Installation Method
+Search for `DXMeSH` in the official `Obsidian` plugin marketplace to install it with one click.
 ## 📖 Usage Instructions
+1. After enabling the plugin, a `✒️` button will appear in the left sidebar.![dxmesh](test/lds051e3UC.png)
+
+2. In the editing view, after clicking on the page to be organized, `Introduction-1.md`, simply click the `✒️` button to build a scientific research material repository with one click.![](test/OgrNWXdUMK.png)
+3. After clicking the `✒️` button, DXMeSH will generate `Introduction-2.1.md` in the current path of `Introduction-1.md` and automatically copy `Introduction-2.2` and a blank `Introduction-2.3`, aiding us in efficiently constructing SCI writing strategies and research design ideas.![](test/fTkOtZIsTs.png)
+
+> It is worth noting that `DXMeSH for Obsidian` thoughtfully adds the current date to the filenames of the generated materials, facilitating version control.![](test/YLM7Q20I7Y.png)
 
 
 Looking back at the `DXMeSH` journey:

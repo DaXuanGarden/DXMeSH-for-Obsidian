@@ -91,7 +91,11 @@ export default class MyPlugin extends Plugin {
 			}
 		
 		});
-				
+		
+		
+		
+
+		
  // 
 		//await this.loadSettings();
 		// This creates an icon in the left ribbon.
