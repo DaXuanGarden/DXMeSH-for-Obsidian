@@ -44,4 +44,7 @@ Together, let's research smarter and innovate more efficiently! 🌟
 2. https://docs.obsidian.md/Home
 3. Professor Zhong Cheng’s National Outstanding Young Scholars Award "The Science of Scientific Writing"
 
-> Hello, welcome to Daxuan's Growth Garden, where you'll find records and reviews of Daxuan's learning and research journey. As a student majoring in Traditional Chinese Medicine, I am fully aware that there is much to improve and enhance in my academic and research explorations. Therefore, I am particularly keen on exchanging ideas and learning from teachers and classmates to achieve greater progress. Daxuan sincerely invites you to join in the effort, to move forward together, and to witness each other's growth. Feel free to email Daxuan at `daxuan111000@163.com` to share knowledge, exchange insights, and grow together. ![alt text](test/WeChat%20QR%20code.png)
+> 🌱Hello, welcome to DaXuan's Growth Garden!💡Here you will find a record and review of DaXuan's journey through learning and scientific research.
+🐣As a student of traditional Chinese medicine, I am well aware of the many areas I need to improve and develop on my path of learning and research exploration.
+🔥Therefore, I greatly look forward to interacting and learning with teachers and classmates, striving to make greater progress together.
+😀Feel free to send Daxuan an email at daxuan111000@163.com. Let's share our knowledge, exchange our experiences, and grow together. ![alt text](test/WeChat%20QR%20code.png)
